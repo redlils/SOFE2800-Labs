@@ -3,7 +3,7 @@ const searchInfo = {
     limit: 5,
     addQuery: function(query) {
       if (this.quiries.length >= this.limit) {
-        var oldestQuery = this.quiries.shift(); // to delete the oldest query.
+        var oldestQuery = this.quiries.shift(); 
         console.log("Oldest search query has been deleted: ", oldestQuery);
       }
       this.quiries.push(query);
@@ -11,7 +11,6 @@ const searchInfo = {
   }
   
   function validateSearchForm() {
-    // Access the textbox using its id instead of the name
     let x = document.getElementById("searchText").value;
     
     if (x == "") {
