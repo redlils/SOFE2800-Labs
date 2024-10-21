@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Document</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
   <script src="script.js"></script>
@@ -16,14 +17,6 @@
     <br/><br/>
   </form>
   <hr/>
-    <form name="searchForm" action="https://www.google.com/search" 
-          onsubmit="return validateSearchForm()">
-      <label>Search Query</label>  
-      <input type="text" id="searchText" name="q" value="">
-      <input type="submit" value="Search Google"> 
-      <br/><br/>
-    </form>
-    <hr/>
 
     <h2> Simple JS calculator </h2>
       <form name="simpleCalculator" onsubmit="return false;">
@@ -80,6 +73,34 @@
     </form>
     
 
+    <h1>Professional JS Calculator</h1>
+    <form name="proCalculator2" onsubmit="return false;">
+      <table id="calculator">
+        <tr>
+          <td colspan="4"><input class="result" type="text" name="result" readonly></td>
+        </tr>
+        <script>
+          const keys = [
+            ["1", "2", "3", "/"],
+            ["4", "5", "6", "*"],
+            ["7", "8", "9", "-"],
+            ["0", ".", "=", "+"],
+            ["c", "(", ")", "D"]
+          ]
+
+          for (let i = 0; i < keys.length; i++) {
+            document.write('<tr>\n')
+            const row = keys[i];
+            for (let j = 0; j < row.length; j++) {
+              const key = row[j];
+              let onClick = (key === "=") ? "solve(\'proCalculator2\')" : "dis(\'" + key + "\', \'proCalculator2\')";
+              document.write('<td><input type="button" class="key" value="', key, '" onclick="', onClick, '"></td>\n')
+            }
+            document.write("</tr>\n")
+          }
+        </script>
+      </table>
+    </form>
   
     
   </body>

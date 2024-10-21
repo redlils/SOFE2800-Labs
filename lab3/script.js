@@ -71,7 +71,11 @@ function calculate() {
 }
 
 function dis(val, formName) {
-  document.forms[formName]["result"].value += val;
+  if (val === "D") {
+    document.forms[formName]["result"].value = document.forms[formName]["result"].value.substring(0, document.forms[formName]["result"].value.length - 1)
+  } else {
+    document.forms[formName]["result"].value += val;
+  }
 }
 
 function clr(formName) {
