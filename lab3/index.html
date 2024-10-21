@@ -16,5 +16,71 @@
     <br/><br/>
   </form>
   <hr/>
+    <form name="searchForm" action="https://www.google.com/search" 
+          onsubmit="return validateSearchForm()">
+      <label>Search Query</label>  
+      <input type="text" id="searchText" name="q" value="">
+      <input type="submit" value="Search Google"> 
+      <br/><br/>
+    </form>
+    <hr/>
+
+    <h2> Simple JS calculator </h2>
+      <form name="simpleCalculator" onsubmit="return false;">
+        <label>Enter the Expression </label>
+        <input type="text" name="operand1" value=""/>
+        <select name="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" name="operand2" value=""/>
+        <button onClick="calculate()"> = </button>
+        <input class="readOnlyTextBox" type="text" name="result" value="" readonly/>
+        <br/><br/><br/>
+      </form>
+    <hr/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.2.0/math.js" integrity="sha512-K6yeEH8HDerhMdJyfx5uSdY0YHQAu2R0KhwGQ9Jzvh0qZPUjceeV7ch0BZz9w6UY+TgKldDzsQWVN+XeJ3PSzw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <h1>Professional JS Calculator</h1>
+    <form name="proCalculator" onsubmit="return false;">
+      <table id="calculator">
+        <tr>
+          <td colspan="3"><input class="result" type="text" name="result" readonly></td>
+          <td><input class="key" type="button" value="C" onclick="clr('proCalculator')"></td>
+        </tr>
+        <tr>
+          <td><input type="button" class="key" value="1" onclick="dis('1', 'proCalculator')"></td>
+          <td><input type="button" class="key" value="2" onclick="dis('2', 'proCalculator')"></td>
+          <td><input type="button" class="key" value="3" onclick="dis('3', 'proCalculator')"></td>
+          <td><input type="button" class="key" value="/" onclick="dis('/', 'proCalculator')"></td>
+        </tr>
+        <tr>
+          <td><input type="button" class="key" value="4" onclick="dis('4', 'proCalculator')"></td>
+          <td><input type="button" class="key" value="5" onclick="dis('5', 'proCalculator')"></td>
+          <td><input type="button" class="key" value="6" onclick="dis('6', 'proCalculator')"></td>
+          <td><input type="button" class="key" value="*" onclick="dis('*', 'proCalculator')"></td>
+        </tr>
+        <tr>
+          <td><input type="button" class="key" value="7" onclick="dis('7', 'proCalculator')"></td>
+          <td><input type="button" class="key" value="8" onclick="dis('8', 'proCalculator')"></td>
+          <td><input type="button" class="key" value="9" onclick="dis('9', 'proCalculator')"></td>
+          <td><input type="button" class="key" value="-" onclick="dis('-', 'proCalculator')"></td>
+        </tr>
+        <tr>
+          <td><input type="button" class="key" value="0" onclick="dis('0', 'proCalculator')"></td>
+          <td><input type="button" class="key" value="." onclick="dis('.', 'proCalculator')"></td>
+    <!-- Solve function call || to evaluate the result value -->
+          <td><input type="button" class="key" value="=" onclick="solve('proCalculator')"></td>
+          <td><input type="button" class="key" value="+" onclick="dis('+', 'proCalculator')"></td>
+        </tr>
+      </table>
+    </form>
+    
+
+  
+    
   </body>
 </html>
